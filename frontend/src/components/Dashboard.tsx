@@ -1,13 +1,12 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import {
-    ShieldCheck, LayoutDashboard, MapPin, Activity, Zap, Truck, TrendingUp, AlertTriangle, 
-    CheckCircle2, RefreshCw, ChevronRight, Bike, Terminal
+    ShieldCheck, LayoutDashboard, MapPin, Activity, Truck, TrendingUp, AlertTriangle, 
+    CheckCircle2, ChevronRight, Bike, Terminal
 } from 'lucide-react'
 import DeliveryMap from '@/components/DeliveryMap'
 import RiskTable from '@/components/RiskTable'
-import PerformanceWidget from '@/components/PerformanceWidget'
 import api from '@/lib/api'
-import type { EnrichedStop, FeedEvent } from '@/types'
+import type { EnrichedStop } from '@/types'
 
 type NavPage = 'overview' | 'map' | 'risk' | 'rider'
 

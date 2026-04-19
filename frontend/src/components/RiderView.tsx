@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
 import {
-    X, Navigation, AlertTriangle, CheckCircle2, Clock, MapPin, 
+    X, Navigation, AlertTriangle, CheckCircle2, MapPin, 
     AlertOctagon, CloudLightning, Activity
 } from 'lucide-react'
 import api from '@/lib/api'
 import type { EnrichedStop } from '@/types'
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker } from 'react-leaflet'
 import { divIcon } from 'leaflet'
 
 interface Props {
