@@ -199,7 +199,7 @@ export default function Dashboard() {
         let reconnectTimer: ReturnType<typeof setTimeout>
 
         const connect = () => {
-            socket = new WebSocket('ws://127.0.0.1:8000/ws')
+            socket = new WebSocket('wss://omniroute-1ety.onrender.com/ws')
 
             socket.onopen = () => {
                 console.log("WS CONNECTED SUCCESS")

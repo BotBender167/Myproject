@@ -5,7 +5,7 @@ import axios from 'axios'
 const API_KEY = import.meta.env.VITE_API_KEY ?? 'sentinel-dev-key'
 
 const api = axios.create({
-    baseURL: 'http://localhost:8000',
+    baseURL: 'https://omniroute-1ety.onrender.com',
     timeout: 10_000,
     headers: {
         'Content-Type': 'application/json',
@@ -35,11 +35,10 @@ api.interceptors.response.use(
         if (!error.response) {
             // Network error — backend not reachable
             console.error(
-                '[Sentinel API] Backend unreachable at http://localhost:8000 — ' +
-                'ensure uvicorn is running: uvicorn main:app --reload'
+                '[Sentinel API] Backend unreachable at https://omniroute-1ety.onrender.com'
             )
             return Promise.reject(
-                new Error('Backend unreachable — start uvicorn on :8000')
+                new Error('Backend unreachable')
             )
         }
 
