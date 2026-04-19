@@ -4,8 +4,10 @@ import axios from 'axios'
 
 const API_KEY = import.meta.env.VITE_API_KEY ?? 'sentinel-dev-key'
 
+export const API_URL = "https://omniroute-1ety.onrender.com"
+
 const api = axios.create({
-    baseURL: 'https://omniroute-1ety.onrender.com',
+    baseURL: API_URL,
     timeout: 10_000,
     headers: {
         'Content-Type': 'application/json',
