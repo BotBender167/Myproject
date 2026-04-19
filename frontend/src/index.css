@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-root text-slate-300 font-sans antialiased overflow-x-hidden select-none;
+  }
+}
+
+@layer components {
+  /* Minimal Flat Surfaces */
+  .glass {
+    @apply bg-[#111111] border border-steel shadow-none rounded-none;
+  }
+  
+  .glass-amber {
+    @apply bg-[#1a1205] border border-amber-500/40 shadow-glow-amber rounded-none;
+  }
+  
+  .stat-card {
+    @apply flex flex-col gap-2 px-5 py-4 border border-steel bg-[#0f0f0f] rounded-none;
+  }
+
+  /* Cyber Typography & Table */
+  .cyber-table {
+    @apply w-full text-left text-sm border-collapse;
+  }
+  .cyber-table th {
+    @apply px-4 py-3 bg-[#0a0a0a] text-steel-500 font-semibold uppercase tracking-wider text-[10px] border-b border-[#222222];
+  }
+  .cyber-table td {
+    @apply px-4 py-3 border-b border-[#222222] bg-[#111111];
+  }
+  .cyber-table tr:hover td {
+    @apply bg-[#161616] cursor-pointer;
+  }
+
+  /* Icon-Only Nav Rail */
+  .nav-rail {
+    @apply w-[60px] shrink-0 h-screen bg-[#050505] border-r border-[#222222] 
+           flex flex-col items-center py-5 z-40 relative select-none;
+  }
+  .nav-rail-logo {
+    @apply w-10 h-10 mb-6 flex items-center justify-center;
+  }
+  .nav-rail-item {
+    @apply relative w-10 h-10 rounded-none flex items-center justify-center 
+           text-steel-500 hover:text-amber-400 hover:bg-[#1a1a1a] transition-all duration-200 mb-2 cursor-pointer;
+  }
+  .nav-rail-item.active {
+    @apply text-amber-500 bg-[#1a1205] border-l-[3px] border-amber-500 shadow-glow-amber-sm;
+  }
+
+  /* Tooltip logic for nav */
+  .nav-rail-item[data-tooltip]:hover::before {
+    content: attr(data-tooltip);
+    @apply absolute left-[60px] top-1/2 -translate-y-1/2 px-2 py-1 bg-[#1a1a1a] border border-[#333333] text-[10px] text-slate-300 whitespace-nowrap z-50 rounded-none pointer-events-none animate-fade-in font-mono uppercase tracking-widest leading-none;
+  }
+
+  /* Badges */
+  .badge-on-track {
+    @apply inline-flex items-center gap-1.5 px-2 py-0.5 rounded-none text-[10px] font-bold bg-[#1a1a1a] text-slate-300 border border-[#444444] tracking-widest uppercase;
+  }
+  .badge-delayed {
+    @apply inline-flex items-center gap-1.5 px-2 py-0.5 rounded-none text-[10px] font-bold bg-[#2d1b05] text-amber-400 border border-amber-500/30 tracking-widest uppercase;
+  }
+  .badge-high {
+    @apply inline-flex items-center gap-1.5 px-2 py-0.5 rounded-none text-[10px] font-bold bg-[#2e0909] text-red-400 border border-red-500/30 shadow-glow-red animate-pulse tracking-widest uppercase;
+  }
+  .badge-failed {
+    @apply inline-flex items-center gap-1.5 px-2 py-0.5 rounded-none text-[10px] font-bold bg-[#1a1a1a] text-steel-500 border border-[#333333] tracking-widest uppercase;
+  }
+  .badge-pending {
+    @apply inline-flex items-center gap-1.5 px-2 py-0.5 rounded-none text-[10px] font-bold bg-[#1a1a1a] text-steel-400 border border-[#333333] tracking-widest uppercase;
+  }
+  
+  .risk-tag {
+    @apply inline-block px-1.5 py-0.5 rounded-none text-[9px] font-mono border border-[#333333] bg-[#1a1a1a] text-steel-400 max-w-[140px] truncate;
+  }
+  .risk-tag-high { @apply bg-[#2e0909] text-red-300 border-red-500/30; }
+  .risk-tag-medium { @apply bg-[#2d1b05] text-amber-300 border-amber-500/30; }
+
+  /* Leaflet Defaults Customization */
+  .leaflet-container {
+    background: #050505 !important; 
+    font-family: inherit !important;
+  }
+  .sentinel-popup .leaflet-popup-content-wrapper {
+    @apply bg-[#0e0e0e] text-slate-300 border border-[#333333] rounded-none shadow-xl;
+  }
+  .sentinel-popup .leaflet-popup-tip {
+    @apply bg-[#0e0e0e] border-b border-r border-[#333333];
+  }
+  
+  /* Scrollbar override */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0a0a0a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #222222;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #333333;
+  }
+
+  /* Map animations */
+  .animated-marker {
+    transition: all 2000ms linear !important;
+  }
+}

@@ -1,0 +1,7 @@
+lat
+lng
+hour_of_day
+traffic_density
+weather_condition
+is_night
+area_risk_zone
